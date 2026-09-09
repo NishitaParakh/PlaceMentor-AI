@@ -1,0 +1,3 @@
+# ML pipeline dependencies
+# The current baseline uses Python + SQLite only.
+# Add scikit-learn when enough historical labeled data is available.
