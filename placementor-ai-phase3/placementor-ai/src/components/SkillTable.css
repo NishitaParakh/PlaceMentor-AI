@@ -1,0 +1,66 @@
+.skill-table-card {
+  padding: 8px 0 0;
+}
+
+.skill-table-scroll {
+  overflow-x: auto;
+  padding: 0 4px;
+}
+
+.skill-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+
+.skill-table th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--line-soft);
+  white-space: nowrap;
+}
+
+.skill-table td {
+  padding: 14px 20px;
+  font-size: 13.5px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line-soft);
+  white-space: nowrap;
+}
+
+.skill-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.skill-table tbody tr:hover {
+  background: var(--surface);
+}
+
+.skill-table-name {
+  display: block;
+  font-weight: 600;
+}
+
+.skill-table-category {
+  display: block;
+  font-size: 12px;
+  color: var(--ink-faint);
+  font-weight: 400;
+}
+
+.skill-table-gap-high {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.skill-table-empty {
+  padding: 32px 20px;
+  text-align: center;
+  color: var(--ink-faint);
+  font-size: 14px;
+}

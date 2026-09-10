@@ -1,0 +1,174 @@
+.dashboard-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.dashboard-main-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.dashboard-secondary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ---- Readiness breakdown section ---- */
+
+.breakdown-card {
+  padding: 24px;
+}
+
+.breakdown-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 28px;
+}
+
+.breakdown-item {
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+}
+
+/* ---- Skill Gap / Roadmap preview cards ---- */
+
+.preview-card-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.preview-gap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.preview-gap-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.preview-gap-value {
+  font-weight: 700;
+  color: var(--danger);
+}
+
+.preview-roadmap-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+}
+
+.preview-roadmap-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.preview-roadmap-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.preview-card-mini .btn {
+  align-self: flex-start;
+}
+
+/* ---- Loading skeleton ---- */
+
+.dashboard-skeleton {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.skeleton-block {
+  background: linear-gradient(90deg, var(--surface-alt) 25%, var(--line-soft) 37%, var(--surface-alt) 63%);
+  background-size: 400% 100%;
+  border-radius: var(--radius-md);
+  animation: skeleton-shimmer 1.4s ease infinite;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.skeleton-header {
+  height: 84px;
+}
+
+.skeleton-stat {
+  height: 108px;
+}
+
+.skeleton-card-lg {
+  height: 320px;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 1180px) {
+  .dashboard-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .breakdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .breakdown-grid {
+    grid-template-columns: 1fr;
+  }
+}

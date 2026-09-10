@@ -1,0 +1,141 @@
+.roadmap-card {
+  display: flex;
+  gap: 16px;
+  position: relative;
+}
+
+.roadmap-card-marker {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+  z-index: 1;
+}
+
+.roadmap-marker-completed {
+  background: var(--success);
+  color: #ffffff;
+}
+
+.roadmap-marker-progress {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.roadmap-marker-upcoming {
+  background: #ffffff;
+  color: var(--ink-faint);
+  border: 2px solid var(--line);
+}
+
+.roadmap-card-body {
+  flex: 1;
+  min-width: 0;
+  padding: 18px 20px;
+}
+
+.roadmap-card-header {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.roadmap-card-week {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.roadmap-card-header-text h3 {
+  margin-top: 3px;
+  font-size: 16px;
+}
+
+.roadmap-card-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.roadmap-card-chevron {
+  color: var(--ink-faint);
+  transition: transform 0.2s ease;
+}
+
+.roadmap-card-chevron.open {
+  transform: rotate(180deg);
+}
+
+.roadmap-card-quickstats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 14px;
+  margin-bottom: 12px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.roadmap-card-quickstats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.roadmap-card-skills {
+  color: var(--ink-faint);
+}
+
+.roadmap-card-details {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.roadmap-card-description {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.roadmap-card-tasks-label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.roadmap-card-continue {
+  margin-top: 16px;
+}
+
+@media (max-width: 560px) {
+  .roadmap-card-header {
+    flex-direction: column;
+  }
+
+  .roadmap-card-header-right {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}

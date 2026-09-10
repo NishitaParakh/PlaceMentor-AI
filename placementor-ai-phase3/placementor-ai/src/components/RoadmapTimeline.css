@@ -1,0 +1,23 @@
+.roadmap-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.roadmap-timeline::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 17px;
+  width: 2px;
+  background: var(--line);
+  z-index: 0;
+}
+
+@media (max-width: 560px) {
+  .roadmap-timeline::before {
+    left: 16px;
+  }
+}

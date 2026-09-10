@@ -1,0 +1,72 @@
+.skill-progress-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  height: 100%;
+}
+
+.skill-progress-top {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.skill-progress-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.skill-progress-row strong {
+  color: var(--ink);
+}
+
+.skill-progress-row svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.skill-progress-gap-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--warning-tint);
+  border: 2px solid var(--warning);
+  flex-shrink: 0;
+}
+
+.skill-progress-insight {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 13px 15px;
+  background: var(--primary-tint);
+  border-radius: var(--radius-sm);
+}
+
+.skill-progress-insight svg {
+  flex-shrink: 0;
+  color: var(--primary);
+  margin-top: 2px;
+}
+
+.skill-progress-insight p {
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+@media (max-width: 460px) {
+  .skill-progress-top {
+    flex-direction: column;
+    text-align: center;
+  }
+}
