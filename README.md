@@ -1,4 +1,4 @@
-# 🎓 PlaceMentor AI
+#  PlaceMentor AI
 
 ## AI-Powered Placement Readiness & Career Intelligence Platform
 
@@ -8,7 +8,7 @@ The platform combines Machine Learning, Natural Language Processing, database sy
 
 ---
 
-## 📌 Problem Statement
+##  Problem Statement
 
 Students often find it difficult to understand their actual placement readiness and what they should improve before applying for jobs. They may have questions such as whether they are ready for placements, what their placement probability is, which technical skills they are missing, which companies they are eligible for, whether their resume is ATS-friendly, how their coding and project experience affects their profile, and what they should learn next.
 
@@ -18,7 +18,7 @@ PlaceMentor AI aims to solve this problem by analyzing multiple aspects of a stu
 
 ---
 
-## 💡 Proposed Solution
+##  Proposed Solution
 
 PlaceMentor AI provides a centralized platform where students can evaluate their placement readiness and continuously improve their career profile.
 
@@ -28,7 +28,7 @@ Based on this information, the system provides personalized insights such as Pla
 
 ---
 
-# ✨ Features
+#  Features
 
 ## 1. AI Placement Readiness Score
 
@@ -140,7 +140,7 @@ Counterfactual Recommendation Engine provides specific actions that could potent
 
 ---
 
-# 🏗️ System Architecture
+#  System Architecture
 
 PlaceMentor AI follows a modular architecture in which the backend acts as the central communication layer between the frontend, database, Machine Learning module, NLP module, and external APIs.
 
@@ -199,7 +199,7 @@ Development Tools
 
 Git, GitHub, and Visual Studio Code are used for collaborative development.
 
-🗄️ Database
+ Database
 
 SQLite is currently used as the development database for PlaceMentor AI.
 
@@ -270,7 +270,7 @@ The backend acts as the central layer that receives requests from the frontend, 
 
 This architecture allows each team member to develop their module independently while keeping the final system modular and easier to integrate.
 
-👥 Team
+ Team
 Team Member	Responsibility
 Priyanshi	Frontend Development
 Pallavi	Backend Development
@@ -278,7 +278,7 @@ Tanishqa	Machine Learning
 Nishita	Database
 Vrinda	NLP
 Soumya	APIs and Charts
-🔄 Development Workflow
+ Development Workflow
 
 The project is developed collaboratively using Git and GitHub.
 
