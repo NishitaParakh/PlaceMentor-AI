@@ -1,0 +1,117 @@
+.eligibility-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.eligibility-form-intro {
+  margin-top: 4px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.eligibility-form-body {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.eligibility-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ---- Skills ---- */
+
+.eligibility-form-skills {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.eligibility-form-skills legend {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.eligibility-skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.eligibility-skill-chip {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 7px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.eligibility-skill-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.eligibility-skill-chip-active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* ---- Experience toggle ---- */
+
+.eligibility-experience-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.eligibility-experience-toggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+/* ---- Submit ---- */
+
+.eligibility-submit-btn {
+  align-self: flex-start;
+}
+
+.eligibility-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@media (max-width: 860px) {
+  .eligibility-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .eligibility-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .eligibility-submit-btn {
+    width: 100%;
+  }
+}

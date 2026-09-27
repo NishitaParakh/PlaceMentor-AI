@@ -1,0 +1,98 @@
+.interview-scheduler-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.interview-scheduler-success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--success-tint);
+  color: var(--success);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.interview-scheduler-submit {
+  align-self: flex-start;
+}
+
+/* ---- Scheduled list ---- */
+
+.interview-scheduler-list-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.interview-scheduler-list {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.interview-scheduler-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 13px 15px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.interview-scheduler-item-main {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.interview-scheduler-candidate {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.interview-scheduler-role {
+  font-size: 11.5px;
+  color: var(--ink-faint);
+}
+
+.interview-scheduler-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.interview-scheduler-mode {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.interview-scheduler-interviewer {
+  font-size: 11.5px;
+  color: var(--ink-faint);
+}
+
+@media (max-width: 900px) {
+  .interview-scheduler-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .interview-scheduler-submit {
+    width: 100%;
+  }
+}

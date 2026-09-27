@@ -1,0 +1,124 @@
+.candidate-details {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.candidate-details-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.candidate-details-head h3 {
+  font-size: 17px;
+}
+
+.candidate-details-role {
+  display: block;
+  margin-top: 3px;
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+
+.candidate-details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.candidate-details-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 11px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  text-align: center;
+}
+
+.candidate-details-item span {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.candidate-details-item strong {
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.candidate-details-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 8px;
+}
+
+.candidate-details-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.candidate-details-timeline ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.candidate-details-timeline li {
+  display: flex;
+  gap: 12px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.candidate-timeline-date {
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--ink);
+  min-width: 78px;
+}
+
+.candidate-details-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.candidate-details-reject-btn {
+  color: var(--ink-soft);
+}
+
+.candidate-details-reject-btn:hover:not(:disabled) {
+  color: var(--danger);
+}
+
+.candidate-details-actions .btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@media (max-width: 560px) {
+  .candidate-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .candidate-details-actions .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}

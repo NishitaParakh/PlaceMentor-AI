@@ -1,0 +1,51 @@
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px 4px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.status-badge-sm {
+  font-size: 11px;
+  padding: 3px 9px 3px 7px;
+}
+
+.status-badge-applied {
+  background: var(--primary-tint);
+  color: var(--primary);
+}
+
+.status-badge-shortlisted {
+  background: #eef1ff;
+  color: #3730a3;
+}
+
+.status-badge-assessment {
+  background: var(--warning-tint);
+  color: var(--warning);
+}
+
+.status-badge-interview {
+  background: rgba(124, 108, 255, 0.14);
+  color: #5b4fd6;
+}
+
+.status-badge-offer {
+  background: var(--success-tint);
+  color: var(--success);
+}
+
+.status-badge-rejected {
+  background: var(--danger-tint);
+  color: var(--danger);
+}
+
+.status-badge-withdrawn {
+  background: var(--surface-alt);
+  color: var(--ink-soft);
+}

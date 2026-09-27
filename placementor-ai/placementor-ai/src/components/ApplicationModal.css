@@ -1,0 +1,80 @@
+.app-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.app-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.app-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.app-field input,
+.app-field select,
+.app-field textarea {
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 10px 13px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: #ffffff;
+  width: 100%;
+}
+
+.app-field textarea {
+  resize: vertical;
+  font-weight: 400;
+}
+
+.app-field input:focus,
+.app-field select:focus,
+.app-field textarea:focus {
+  border-color: var(--primary);
+}
+
+.app-field input[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.app-modal-error {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--danger);
+}
+
+.app-modal-notes {
+  width: 100%;
+}
+
+.app-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 6px;
+  border-top: 1px solid var(--line-soft);
+}
+
+@media (max-width: 560px) {
+  .app-modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .app-modal-actions .btn {
+    width: 100%;
+  }
+}

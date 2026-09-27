@@ -1,0 +1,16 @@
+.trend-metric-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.trend-metric-trend-up {
+  color: var(--success);
+}
+
+.trend-metric-trend-down {
+  color: var(--danger);
+}

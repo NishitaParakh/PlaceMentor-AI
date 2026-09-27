@@ -1,0 +1,43 @@
+.profile-completion-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-completion-percent {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.profile-completion-missing span {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+
+.profile-completion-missing ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-completion-missing li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.profile-completion-missing li svg {
+  color: var(--warning);
+  flex-shrink: 0;
+}
+
+.profile-completion-btn {
+  align-self: flex-start;
+}

@@ -1,0 +1,97 @@
+.app-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.app-filters-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.app-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  color: var(--ink-faint);
+  flex: 1;
+  min-width: 200px;
+}
+
+.app-search input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 13.5px;
+  color: var(--ink);
+  width: 100%;
+}
+
+.app-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.app-sort select {
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: #ffffff;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.app-chip-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.app-chip {
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.app-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.app-chip.active {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .app-filters-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .app-sort {
+    justify-content: space-between;
+  }
+
+  .app-sort select {
+    flex: 1;
+  }
+}

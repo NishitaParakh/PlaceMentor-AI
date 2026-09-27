@@ -1,0 +1,196 @@
+.mentor-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Fixed-ish height so the transcript scrolls internally instead of
+     stretching the page; min-height keeps it usable on short screens. */
+  height: clamp(420px, 62vh, 640px);
+  padding: 20px;
+}
+
+.mentor-chat-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 4px;
+}
+
+.mentor-chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---- Empty state ---- */
+
+.mentor-chat-empty {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.mentor-chat-empty-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--gradient-navy);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.mentor-chat-empty h3 {
+  font-size: 17px;
+}
+
+.mentor-chat-empty p {
+  margin-top: 8px;
+  max-width: 420px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ---- Typing indicator ---- */
+
+.mentor-typing {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mentor-typing-avatar {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--gradient-navy);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mentor-typing-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 11px 14px;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  border-top-left-radius: 4px;
+}
+
+.mentor-typing-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink-faint);
+  animation: mentor-typing-bounce 1.2s ease-in-out infinite;
+}
+
+.mentor-typing-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.mentor-typing-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes mentor-typing-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.mentor-typing-text {
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+
+/* ---- Starter suggestions (empty conversation only) ---- */
+
+.mentor-chat-starters {
+  padding-top: 4px;
+  border-top: 1px solid var(--line-soft);
+}
+
+/* ---- Composer ---- */
+
+.mentor-composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.mentor-composer-input {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--ink);
+  resize: none;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.mentor-composer-input:focus {
+  border-color: var(--primary);
+}
+
+.mentor-composer-input::placeholder {
+  color: var(--ink-faint);
+}
+
+.mentor-send-btn {
+  flex-shrink: 0;
+  padding: 12px 20px;
+}
+
+.mentor-send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.mentor-composer-hint {
+  font-size: 11.5px;
+  color: var(--ink-faint);
+  text-align: right;
+}
+
+@media (max-width: 560px) {
+  .mentor-chat {
+    height: clamp(380px, 58vh, 560px);
+    padding: 16px;
+  }
+
+  .mentor-send-label {
+    display: none;
+  }
+
+  .mentor-send-btn {
+    padding: 12px 16px;
+  }
+
+  .mentor-composer-hint {
+    text-align: left;
+  }
+}

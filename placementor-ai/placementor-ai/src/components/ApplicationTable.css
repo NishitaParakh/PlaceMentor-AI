@@ -1,0 +1,138 @@
+.app-table-card {
+  padding: 8px 0 0;
+  margin-top: 16px;
+  overflow: visible;
+}
+
+.app-table-scroll {
+  overflow-x: auto;
+  padding: 0 4px;
+}
+
+.app-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.app-table th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line-soft);
+  white-space: nowrap;
+}
+
+.app-table td {
+  padding: 14px 18px;
+  font-size: 13.5px;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line-soft);
+  white-space: nowrap;
+}
+
+.app-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.app-table tbody tr:hover {
+  background: var(--surface);
+}
+
+.app-table-company-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.app-table-company-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.app-table-next {
+  color: var(--ink-soft);
+}
+
+.app-table-deadline-soon {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.app-table-actions-col {
+  text-align: right;
+  width: 64px;
+}
+
+.app-table-menu-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.app-table-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.app-table-menu-btn:hover {
+  background: var(--surface);
+  border-color: var(--line);
+}
+
+.app-table-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  width: 160px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 10;
+}
+
+.app-table-menu button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.app-table-menu button:hover {
+  background: var(--surface);
+}
+
+.app-table-menu-danger {
+  color: var(--danger) !important;
+}
+

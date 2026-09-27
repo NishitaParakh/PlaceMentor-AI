@@ -1,0 +1,150 @@
+.interview-question {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ---- Progress ---- */
+
+.interview-progress-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.interview-progress-count {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.interview-context-chips {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* ---- Question ---- */
+
+.interview-question-body {
+  padding: 20px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.interview-question-type {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.interview-question-text {
+  font-size: clamp(16px, 2.2vw, 19px);
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+/* ---- Answer ---- */
+
+.interview-answer-field textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.interview-answer-field textarea:disabled {
+  background: var(--surface);
+  color: var(--ink-soft);
+  cursor: not-allowed;
+}
+
+.interview-answer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: -8px;
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.interview-answer-hint {
+  color: var(--ink-faint);
+}
+
+/* ---- Controls ---- */
+
+.interview-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.interview-controls-left,
+.interview-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.interview-end-btn {
+  color: var(--ink-soft);
+}
+
+.interview-end-btn:hover {
+  color: var(--danger);
+}
+
+.interview-controls .btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@media (max-width: 720px) {
+  .interview-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .interview-controls-left,
+  .interview-controls-right {
+    width: 100%;
+  }
+
+  .interview-controls-left .btn,
+  .interview-controls-right .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .interview-question-body {
+    padding: 16px;
+  }
+
+  .interview-controls-left,
+  .interview-controls-right {
+    flex-direction: column;
+  }
+
+  .interview-controls-left .btn,
+  .interview-controls-right .btn {
+    width: 100%;
+  }
+}

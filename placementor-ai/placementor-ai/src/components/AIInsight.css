@@ -1,0 +1,81 @@
+.ai-insight-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: linear-gradient(180deg, #ffffff 0%, var(--primary-tint) 220%);
+}
+
+.ai-insight-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--gradient-navy);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-insight-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.ai-insight-body p {
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.ai-insight-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.ai-insight-chevron {
+  transition: transform 0.2s ease;
+}
+
+.ai-insight-chevron.open {
+  transform: rotate(180deg);
+}
+
+.ai-insight-reasons {
+  margin-top: 12px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ai-insight-reasons li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.ai-insight-reasons li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+}

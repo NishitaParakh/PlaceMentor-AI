@@ -1,0 +1,167 @@
+.skillgap-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ---- Top grid: readiness + recommendation ---- */
+
+.skillgap-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.recommend-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.recommend-lead {
+  margin-top: 4px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+.recommend-list {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.recommend-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.recommend-index {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recommend-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.recommend-item-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.recommend-item-meta {
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.recommend-btn {
+  margin-top: 20px;
+}
+
+/* ---- Skill list section ---- */
+
+.skillgap-list-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.skillgap-count {
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+
+.skillgap-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* ---- Strengths / Improvements ---- */
+
+.skillgap-secondary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.strengths-list {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.improvements-list {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.improvements-list li + li {
+  padding-top: 18px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.improvement-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 7px;
+  font-size: 13.5px;
+}
+
+.improvement-name {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.improvement-values {
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.improvement-target {
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+
+.improvement-action {
+  margin-top: 8px;
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 980px) {
+  .skillgap-top-grid,
+  .skillgap-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .skillgap-card-grid {
+    grid-template-columns: 1fr;
+  }
+}

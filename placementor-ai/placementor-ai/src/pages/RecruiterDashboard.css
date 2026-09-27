@@ -1,0 +1,107 @@
+.recruiter-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.recruiter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.recruiter-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.recruiter-section-head h2 {
+  font-size: 18px;
+}
+
+.recruiter-job-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.recruiter-disclaimer {
+  font-size: 12px;
+  color: var(--ink-faint);
+  line-height: 1.6;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ---- Job "view details" modal body ---- */
+
+.recruiter-job-view {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recruiter-job-view-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-size: 13px;
+}
+
+.recruiter-job-view-row span {
+  color: var(--ink-soft);
+}
+
+.recruiter-job-view-row strong {
+  color: var(--ink);
+  text-align: right;
+}
+
+.recruiter-job-view-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px 2px;
+}
+
+.recruiter-job-view-skills > span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.recruiter-job-view-skills > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.recruiter-job-view > .btn {
+  align-self: flex-end;
+  margin-top: 4px;
+}
+
+@media (max-width: 1080px) {
+  .recruiter-job-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .recruiter-job-grid {
+    grid-template-columns: 1fr;
+  }
+}

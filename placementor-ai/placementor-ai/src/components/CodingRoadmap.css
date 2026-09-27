@@ -1,0 +1,145 @@
+.coding-roadmap-summary {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.coding-roadmap-summary-bar {
+  flex: 1;
+  min-width: 0;
+}
+
+.coding-roadmap-summary-count {
+  flex-shrink: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.coding-roadmap-list {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.coding-stage {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  padding-bottom: 22px;
+}
+
+/* Connector line between stage markers */
+.coding-stage::before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 36px;
+  bottom: 0;
+  width: 2px;
+  background: var(--line);
+}
+
+.coding-stage:last-child {
+  padding-bottom: 0;
+}
+
+.coding-stage:last-child::before {
+  display: none;
+}
+
+.coding-stage-marker {
+  position: relative;
+  z-index: 1;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-alt);
+  color: var(--ink-faint);
+  border: 2px solid #ffffff;
+}
+
+.coding-stage-completed .coding-stage-marker {
+  background: var(--success-tint);
+  color: var(--success);
+}
+
+.coding-stage-in-progress .coding-stage-marker {
+  background: var(--primary-tint);
+  color: var(--primary);
+}
+
+.coding-stage-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-top: 3px;
+}
+
+.coding-stage-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.coding-stage-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.coding-stage-desc {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.coding-stage-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.coding-stage-topic {
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-soft);
+  border: 1px solid var(--line-soft);
+}
+
+@media (max-width: 560px) {
+  .coding-roadmap-summary {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .coding-stage {
+    gap: 12px;
+  }
+
+  .coding-stage::before {
+    left: 15px;
+  }
+
+  .coding-stage-marker {
+    width: 32px;
+    height: 32px;
+  }
+}

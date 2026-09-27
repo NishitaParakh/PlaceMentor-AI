@@ -1,0 +1,81 @@
+.deadline-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.deadline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.deadline-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  flex-wrap: wrap;
+}
+
+.deadline-item-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.deadline-item-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.deadline-item-sub {
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.deadline-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.deadline-item-date {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.deadline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.urgency-soon {
+  background: var(--danger-tint);
+  color: var(--danger);
+}
+
+.urgency-upcoming {
+  background: var(--primary-tint);
+  color: var(--primary);
+}
+
+.urgency-completed {
+  background: var(--success-tint);
+  color: var(--success);
+}
+

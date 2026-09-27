@@ -1,0 +1,252 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Target, Briefcase, Video, UserCheck, IndianRupee, Building2, GraduationCap } from "lucide-react";
+import DashboardLayout from "../components/DashboardLayout.jsx";
+import PageHeader from "../components/PageHeader.jsx";
+import StatCard from "../components/StatCard.jsx";
+import ReadinessScore from "../components/ReadinessScore.jsx";
+import ProbabilityCard from "../components/ProbabilityCard.jsx";
+import ProgressBar from "../components/ProgressBar.jsx";
+import InsightCard from "../components/InsightCard.jsx";
+import ActivityList from "../components/ActivityList.jsx";
+import TaskList from "../components/TaskList.jsx";
+import ProfileCompletion from "../components/ProfileCompletion.jsx";
+import { readinessCategories } from "../data/readinessData.js";
+import { recommendedFocus } from "../data/skillData.js";
+import roadmapData from "../data/roadmapData.js";
+import applicationDataSeed, { computeApplicationStats } from "../data/applicationData.js";
+import { keyMetrics } from "../data/placementTrendsData.js";
+import {
+  getStudentDashboard,
+  getReadinessScore,
+  getPlacementProbability,
+  getRecentActivity,
+  getUpcomingTasks,
+  getCareerInsight,
+} from "../services/api.js";
+import "./StudentDashboard.css";
+
+const currentRoadmapWeek = roadmapData.find((w) => w.status === "in-progress");
+const nextRoadmapWeek = roadmapData.find((w) => w.status === "upcoming");
+
+// Phase 4 dashboard previews read straight from the same Application
+// Tracker / Placement Trends dummy data those pages use, so the numbers
+// here always match what's shown on /applications and /trends.
+const applicationOverviewStats = computeApplicationStats(applicationDataSeed);
+
+// The full Phase 2 dashboard. Every widget gets its data through
+// src/services/api.js (mock functions today, real API calls later) —
+// see that file's comments for how the swap will work.
+export default function StudentDashboard() {
+  const [student, setStudent] = useState(null);
+  const [readiness, setReadiness] = useState(null);
+  const [probability, setProbability] = useState(null);
+  const [activity, setActivity] = useState([]);
+  const [tasks, setTasks] = useState([]);
+  const [insight, setInsight] = useState(null);
+
+  useEffect(() => {
+    getStudentDashboard().then(setStudent);
+    getReadinessScore().then(setReadiness);
+    getPlacementProbability().then(setProbability);
+    getRecentActivity().then(setActivity);
+    getUpcomingTasks().then(setTasks);
+    getCareerInsight().then(setInsight);
+  }, []);
+
+  const loading = !student || !readiness || !probability || !insight;
+
+  return (
+    <DashboardLayout pageTitle="Dashboard">
+      {loading ? (
+        <DashboardSkeleton />
+      ) : (
+        <div className="dashboard-content">
+          <PageHeader student={student} />
+
+          <div className="dashboard-stats">
+            <StatCard
+              icon={Target}
+              value={`${student.skillsMatched}/${student.totalSkills}`}
+              label="Skills Matched"
+              trend="+2 this month"
+            />
+            <StatCard
+              icon={Briefcase}
+              value={String(student.applications).padStart(2, "0")}
+              label="Applications"
+              trend={`${student.activeApplications} active`}
+            />
+            <StatCard
+              icon={Video}
+              value={String(student.interviews).padStart(2, "0")}
+              label="Interviews"
+              trend={`${student.upcomingInterviews} upcoming`}
+            />
+            <StatCard
+              icon={UserCheck}
+              value={`${student.profileCompletion}%`}
+              label="Profile Completion"
+              trend="+5% this week"
+            />
+          </div>
+
+          <div className="dashboard-main-grid">
+            <ReadinessScore
+              score={readiness.score}
+              categories={readiness.categories}
+              breakdown={readiness.breakdown}
+              insight={readiness.insight}
+            />
+            <ProbabilityCard
+              current={probability.current}
+              changePercent={probability.changePercent}
+              note={probability.note}
+              trend={probability.trend}
+            />
+          </div>
+
+          <section className="card breakdown-card">
+            <div className="card-title-row">
+              <h3>Readiness Breakdown</h3>
+            </div>
+            <div className="breakdown-grid">
+              {readinessCategories.map((cat) => (
+                <div className="breakdown-item" key={cat.key}>
+                  <ProgressBar label={cat.label} value={student.readinessBreakdown[cat.key]} />
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <div className="dashboard-secondary-grid">
+            <InsightCard text={insight.text} to="/roadmap" />
+            <ProfileCompletion percent={student.profileCompletion} missingItems={student.missingProfileItems} />
+          </div>
+
+          <div className="dashboard-secondary-grid">
+            <div className="card preview-card-mini">
+              <div className="card-title-row">
+                <h3>Skill Gap Preview</h3>
+              </div>
+              <ul className="preview-gap-list">
+                {recommendedFocus.map((item) => (
+                  <li key={item.skill}>
+                    <span>{item.skill}</span>
+                    <span className="preview-gap-value">{item.gap}%</span>
+                  </li>
+                ))}
+              </ul>
+              <Link to="/skills" className="btn btn-secondary btn-sm">
+                View Skill Gap →
+              </Link>
+            </div>
+
+            <div className="card preview-card-mini">
+              <div className="card-title-row">
+                <h3>Roadmap Preview</h3>
+              </div>
+              {currentRoadmapWeek && (
+                <div className="preview-roadmap-block">
+                  <span className="preview-roadmap-label">Current</span>
+                  <span className="preview-roadmap-title">{currentRoadmapWeek.title}</span>
+                  <ProgressBar value={currentRoadmapWeek.progress} size="sm" />
+                </div>
+              )}
+              {nextRoadmapWeek && (
+                <div className="preview-roadmap-block">
+                  <span className="preview-roadmap-label">Next</span>
+                  <span className="preview-roadmap-title">{nextRoadmapWeek.title}</span>
+                </div>
+              )}
+              <Link to="/roadmap" className="btn btn-secondary btn-sm">
+                View Roadmap →
+              </Link>
+            </div>
+          </div>
+
+          <div className="dashboard-secondary-grid">
+            <ActivityList items={activity} />
+            <TaskList items={tasks} />
+          </div>
+
+          <div className="dashboard-secondary-grid">
+            <div className="card preview-card-mini">
+              <div className="card-title-row">
+                <h3>Application Overview</h3>
+              </div>
+              <ul className="preview-gap-list">
+                <li>
+                  <span>Applications</span>
+                  <span className="preview-gap-value preview-value-neutral">{applicationOverviewStats.total}</span>
+                </li>
+                <li>
+                  <span>Active</span>
+                  <span className="preview-gap-value preview-value-neutral">{applicationOverviewStats.active}</span>
+                </li>
+                <li>
+                  <span>Interviews</span>
+                  <span className="preview-gap-value preview-value-neutral">{applicationOverviewStats.interviews}</span>
+                </li>
+                <li>
+                  <span>Offers</span>
+                  <span className="preview-gap-value preview-value-success">{applicationOverviewStats.offers}</span>
+                </li>
+              </ul>
+              <Link to="/applications" className="btn btn-secondary btn-sm">
+                View Applications →
+              </Link>
+            </div>
+
+            <div className="card preview-card-mini">
+              <div className="card-title-row">
+                <h3>Placement Market Snapshot</h3>
+                <span className="demo-tag">Demo Analytics</span>
+              </div>
+              <ul className="preview-gap-list">
+                <li>
+                  <span>
+                    <IndianRupee size={13} /> Average Package
+                  </span>
+                  <span className="preview-gap-value preview-value-neutral">₹{keyMetrics.averagePackage} LPA</span>
+                </li>
+                <li>
+                  <span>
+                    <Building2 size={13} /> Companies Hiring
+                  </span>
+                  <span className="preview-gap-value preview-value-neutral">{keyMetrics.companiesHiring}</span>
+                </li>
+                <li>
+                  <span>
+                    <GraduationCap size={13} /> Placement Rate
+                  </span>
+                  <span className="preview-gap-value preview-value-success">{keyMetrics.studentsPlaced}%</span>
+                </li>
+              </ul>
+              <Link to="/trends" className="btn btn-secondary btn-sm">
+                View Placement Trends →
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+    </DashboardLayout>
+  );
+}
+
+function DashboardSkeleton() {
+  return (
+    <div className="dashboard-skeleton" aria-label="Loading dashboard" role="status">
+      <div className="skeleton-block skeleton-header" />
+      <div className="dashboard-stats">
+        {[0, 1, 2, 3].map((i) => (
+          <div className="skeleton-block skeleton-stat" key={i} />
+        ))}
+      </div>
+      <div className="dashboard-main-grid">
+        <div className="skeleton-block skeleton-card-lg" />
+        <div className="skeleton-block skeleton-card-lg" />
+      </div>
+    </div>
+  );
+}

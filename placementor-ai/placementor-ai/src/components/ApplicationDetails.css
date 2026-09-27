@@ -1,0 +1,135 @@
+.app-details {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.app-details-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.app-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.app-details-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  color: var(--ink-faint);
+}
+
+.app-details-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.app-details-item span {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-faint);
+}
+
+.app-details-item strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.app-details-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.app-details-notes span {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.app-details-notes p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.app-details-timeline-title {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 14px;
+}
+
+.app-details-timeline ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.app-details-timeline ul::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 4px;
+  width: 2px;
+  background: var(--line);
+}
+
+.app-details-timeline li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+}
+
+.app-details-timeline-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  margin-top: 4px;
+  z-index: 1;
+  box-shadow: 0 0 0 3px #ffffff;
+}
+
+.app-details-timeline-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.app-details-timeline-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-faint);
+}
+
+.app-details-timeline-event {
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+@media (max-width: 560px) {
+  .app-details-grid {
+    grid-template-columns: 1fr;
+  }
+}

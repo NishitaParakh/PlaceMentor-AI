@@ -1,0 +1,7 @@
+.chart-card {
+  min-width: 0;
+}
+
+.chart-card .card-title-row {
+  margin-bottom: 4px;
+}

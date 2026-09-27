@@ -1,0 +1,168 @@
+.eligibility-result {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ---- Verdict ---- */
+
+.eligibility-verdict {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: var(--radius-sm);
+}
+
+.eligibility-verdict-eligible {
+  background: var(--success-tint);
+}
+
+.eligibility-verdict-not {
+  background: var(--danger-tint);
+}
+
+.eligibility-verdict-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.eligibility-verdict-eligible .eligibility-verdict-icon {
+  color: var(--success);
+}
+
+.eligibility-verdict-not .eligibility-verdict-icon {
+  color: var(--danger);
+}
+
+.eligibility-verdict-body p {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.eligibility-verdict-body strong {
+  color: var(--ink);
+}
+
+/* ---- Disclaimer ---- */
+
+.eligibility-disclaimer {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-faint);
+  text-align: center;
+  padding: 8px 12px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-sm);
+}
+
+/* ---- Criteria ---- */
+
+.eligibility-criteria-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.eligibility-criteria-block h4 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13.5px;
+  margin-bottom: 11px;
+}
+
+.eligibility-criteria-block:first-child h4 svg {
+  color: var(--success);
+}
+
+.eligibility-criteria-block:last-child h4 svg {
+  color: var(--warning);
+}
+
+.eligibility-criteria-block ul {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.eligibility-criteria-block li {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.eligibility-criteria-block li strong {
+  color: var(--ink);
+}
+
+.eligibility-criteria-empty {
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+
+/* ---- Suggestions ---- */
+
+.eligibility-suggestions {
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--primary-tint);
+}
+
+.eligibility-suggestions h4 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13.5px;
+  margin-bottom: 10px;
+}
+
+.eligibility-suggestions h4 svg {
+  color: var(--primary);
+}
+
+.eligibility-suggestions ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eligibility-suggestions li {
+  position: relative;
+  padding-left: 15px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.eligibility-suggestions li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+@media (max-width: 720px) {
+  .eligibility-criteria-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .eligibility-verdict {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,51 @@
+.prep-checklist-list {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.prep-checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 4px;
+  border-bottom: 1px solid var(--line-soft);
+  cursor: pointer;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.prep-checklist-list li:last-child .prep-checklist-item {
+  border-bottom: none;
+}
+
+.prep-checklist-box {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1.5px solid var(--line);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.prep-checklist-item-done .prep-checklist-box {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.prep-checklist-item-done span:last-child {
+  color: var(--ink-faint);
+  text-decoration: line-through;
+}
+
+/* Custom box shows focus when the (visually hidden) real checkbox has it */
+.prep-checklist-item:has(input:focus-visible) .prep-checklist-box {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}

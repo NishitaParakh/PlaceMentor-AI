@@ -1,0 +1,5 @@
+/* This form reuses the shared .app-modal-form / .app-modal-grid /
+   .app-field / .app-modal-error / .app-modal-actions classes already
+   defined in ApplicationModal.css (loaded globally once Vite bundles the
+   app), so no new rules are needed here. This file exists only to keep
+   the project's one-CSS-file-per-component convention. */

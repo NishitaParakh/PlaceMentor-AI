@@ -1,0 +1,128 @@
+.skill-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.skill-filters-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.skill-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  color: var(--ink-faint);
+  flex: 1;
+  min-width: 200px;
+}
+
+.skill-search input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 13.5px;
+  color: var(--ink);
+  width: 100%;
+}
+
+.skill-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.skill-sort select {
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: #ffffff;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.skill-view-toggle {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.skill-view-toggle button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: #ffffff;
+  border: none;
+  color: var(--ink-faint);
+  cursor: pointer;
+}
+
+.skill-view-toggle button + button {
+  border-left: 1px solid var(--line);
+}
+
+.skill-view-toggle button.active {
+  background: var(--primary-tint);
+  color: var(--primary);
+}
+
+.skill-chip-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.skill-chip {
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.skill-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.skill-chip.active {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.skill-chip-priority.active {
+  background: var(--navy);
+}
+
+@media (max-width: 640px) {
+  .skill-filters-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .skill-sort {
+    justify-content: space-between;
+  }
+
+  .skill-sort select {
+    flex: 1;
+  }
+}

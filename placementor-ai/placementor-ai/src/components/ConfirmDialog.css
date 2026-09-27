@@ -1,0 +1,34 @@
+.confirm-dialog p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.confirm-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+/* Shared danger button modifier — used anywhere a destructive action
+   needs a button (delete confirmations, etc.). */
+.btn-danger {
+  background: var(--danger);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(194, 58, 58, 0.24);
+}
+
+.btn-danger:hover {
+  box-shadow: 0 14px 30px rgba(194, 58, 58, 0.32);
+}
+
+@media (max-width: 480px) {
+  .confirm-dialog-actions {
+    flex-direction: column-reverse;
+  }
+
+  .confirm-dialog-actions .btn {
+    width: 100%;
+  }
+}
